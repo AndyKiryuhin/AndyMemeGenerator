@@ -69,6 +69,8 @@ To use the command-line interface tool, run the following command:
 
     python app.py
 
+It will put resulted mem picture in "tmp" folder
+
 To generate a meme using the command line, run the following command:
 
     python meme.py --path <image_path> --body <quote_body> --author <quote_author>
@@ -88,6 +90,12 @@ This will start the Flask development server on http://localhost:5000/. You can 
 The web application allows users to submit a URL for an image and a quote body and author. The application will then download the image, generate a meme using the image and the quote, and display the meme to the user.
 
 Dependencies
+
+Please install pdftotext tool with following command: 
+
+sudo apt install poppler-utils
+
+Also install all required packages.
 
 certifi==2022.12.7
 charset-normalizer==3.1.0

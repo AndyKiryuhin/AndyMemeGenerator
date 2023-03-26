@@ -7,9 +7,11 @@ itsdangerous==2.1.2
 Jinja2==3.1.2
 lxml==4.9.2
 MarkupSafe==2.1.2
+pdftotext==2.2.2
 Pillow==9.4.0
-PyPDF2==3.0.1
 python-docx==0.8.11
 requests==2.28.2
+snowballstemmer==2.2.0
+tomli==2.0.1
 urllib3==1.26.15
 Werkzeug==2.2.3
