@@ -1,3 +1,12 @@
+"""Meme generator module that creates memes.
+
+This module allows users to generate memes by providing a path
+to an image file,
+a quote body, and a quote author, or by selecting random
+ images and quotes from
+the available resources.
+"""
+
 import os
 import random
 import argparse
@@ -5,11 +14,24 @@ from QuoteEngine.Ingestor import Ingestor
 from models import QuoteModel
 from memeclass import MemeEngine
 
-# @TODO Import your Ingestor and MemeEngine classes
-
 
 def generate_meme(path=None, body=None, author=None):
-    """ Generate a meme given an path and a quote """
+    """Generate a meme given a path and a quote.
+
+    Args:
+        path (str, optional): The path to the image file.
+          Defaults to None.
+        body (str, optional): The quote body to add to the image.
+          Defaults to None.
+        author (str, optional): The quote author to add to the image.
+          Defaults to None.
+
+    Raises:
+        Exception: Raised when the author is not provided if the body is used.
+
+    Returns:
+        str: The path to the generated meme image.
+    """
     img = None
     quote = None
 
@@ -45,13 +67,11 @@ def generate_meme(path=None, body=None, author=None):
 
 
 if __name__ == "__main__":
-    # @TODO Use ArgumentParser to parse the following CLI arguments
-    # path - path to an image file
-    # body - quote body to add to the image
-    # author - quote author to add to the image
     parser = argparse.ArgumentParser(description='Meme Generator')
     parser.add_argument('--path', type=str, help='Path to an image file')
-    parser.add_argument('--body', type=str, help='Quote body to add to the image')
-    parser.add_argument('--author', type=str, help='Quote author to add to the image')
+    parser.add_argument('--body', type=str,
+                        help='Quote body to add to the image')
+    parser.add_argument('--author', type=str,
+                        help='Quote author to add to the image')
     args = parser.parse_args()
     print(generate_meme(args.path, args.body, args.author))
